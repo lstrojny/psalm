@@ -1738,6 +1738,7 @@ class ClassAnalyzer extends ClassLikeAnalyzer
 
                 FunctionLike\ReturnTypeAnalyzer::verifyReturnType(
                     $stmt,
+                    $stmt->getStmts() ?: [],
                     $source,
                     $method_analyzer,
                     $interface_return_type,
@@ -1750,6 +1751,7 @@ class ClassAnalyzer extends ClassLikeAnalyzer
 
         FunctionLike\ReturnTypeAnalyzer::verifyReturnType(
             $stmt,
+            $stmt->getStmts() ?: [],
             $source,
             $method_analyzer,
             $return_type,
